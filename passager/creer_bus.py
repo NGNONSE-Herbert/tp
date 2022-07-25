@@ -90,7 +90,18 @@ def calculate_poids_restant(bus1):
     return poids_restant
 
 
-
+def delete_bus():
+    id_bus = input("entrez l'id du bus : ")
+    if verifier_id(id_bus):
+        for bus in liste_bus:
+            if bus["id"] == id_bus:
+                liste_bus.remove(bus)
+                return liste_bus
+            else:
+                continue
+    else:
+        print("ce bus n'existe pas ")
+        return liste_bus
 
 
 

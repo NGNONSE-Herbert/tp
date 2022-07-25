@@ -9,6 +9,7 @@ passager ={
 }
 
 liste_passager = []
+liste_bus_passager =[]
 
 def generate_passager(id, nom, poids):
     nouveau_passager = copy.deepcopy(passager)
@@ -42,6 +43,26 @@ def creer_Passager():
 
 
 
+def supprimer_passager(liste_bus):
+    id_passager = input("entrez l'id du passager : ")
+    if verifie_Id_Passager(id_passager):
+        for passager in liste_passager:
+            if passager["id"] == id_passager:
+                liste_passager.remove(passager)
+                liste_bus_passager.append(liste_passager)
+                for bus in liste_bus:
+                    for passager in bus["passager"]:
+                        if id_passager == passager["id"]:
+                            bus["passager"].remove(passager)
+                        else:
+                            continue
+                liste_bus_passager.append(liste_bus)
+                return liste_bus_passager
+            else:
+                continue
+    else:
+        print("le passager n'existe pas ")
+        return liste_passager
 
 
 

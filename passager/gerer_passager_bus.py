@@ -79,6 +79,9 @@ def delete_passager(liste_bus):
         print("l'id du bus est incorrecte")
         return liste_bus
 
+
+
+
 def acceuil_passager_bus(liste_bus):
     nombre_de_place = 0
     nombre_de_place1 = 0

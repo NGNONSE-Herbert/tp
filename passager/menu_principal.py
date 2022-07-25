@@ -15,6 +15,8 @@ def menu():
     print("8 : afficher la liste des passagers d'un bus ")
     print("9 : afficher l'ensemble des passagers de ma flotte de bus ")
     print("10 : savoir si un passager est enregistré sur un bus de ma flotte ")
+    print("11 : supprimer un bus ")
+    print("12 : supprimer un passager ")
     print("q : quitter \n")
     
 
@@ -50,6 +52,12 @@ while valeur.lower() != "q":
         gerer_passager_bus.liste_passager_flotte(liste_passager)
     elif valeur == "10":
         gerer_passager_bus.passager_flotte_bus(liste_bus)
+    elif valeur == "11":
+        liste_bus = creer_bus.delete_bus()
+    elif valeur == "12":
+        delete = creer_passager.supprimer_passager(liste_bus)
+        liste_passager = delete[0]
+        liste_bus = delete[1]
     elif valeur == "q":
         break
 
